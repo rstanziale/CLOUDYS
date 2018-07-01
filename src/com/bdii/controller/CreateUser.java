@@ -25,7 +25,6 @@ public class CreateUser extends HttpServlet {
      */
     public CreateUser() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
