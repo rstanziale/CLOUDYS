@@ -1,5 +1,7 @@
 package com.bdii.model;
 
+import java.util.ArrayList;
+
 public class VM {
 	
 	private String id;
@@ -8,7 +10,8 @@ public class VM {
 	private String processore;
 	private String datacreazione;
 	private String costo;
-	
+	private String os;
+	private ArrayList<String> app;
 	
 	
 	public VM(String id, String hdd, String ram, String processore, String datacreazione, String costo) {
@@ -19,12 +22,38 @@ public class VM {
 		this.processore = processore;
 		this.datacreazione = datacreazione;
 		this.costo = costo;
+		
+		this.app = new ArrayList<String>();
 	}
 
 
 
 	public String getId() {
 		return id;
+	}
+
+
+
+	public String getOsName() {
+		return os;
+	}
+
+
+
+	public void setOs(String os) {
+		this.os = os;
+	}
+
+
+
+	public ArrayList<String> getApp() {
+		return app;
+	}
+
+
+
+	public void addApp(String app) {
+		this.app.add(app);
 	}
 
 
@@ -157,9 +186,6 @@ public class VM {
 	@Override
 	public String toString() {
 		return "VM [id=" + id + ", hdd=" + hdd + ", ram=" + ram + ", processore=" + processore + ", datacreazione="
-				+ datacreazione + ", costo=" + costo + "]";
+				+ datacreazione + ", costo=" + costo + ", os=" + os + "]";
 	}
-	
-
-
 }

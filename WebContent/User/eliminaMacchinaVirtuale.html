@@ -1,0 +1,25 @@
+<nav>
+    <ul>
+        <li><a href="http://localhost:8080/CLOUDYS/User/index.jsp">Home</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/GestioneMacchineVirtuali">Gestione Macchine Virtuali</a></li>
+        <li><a href="http://localhost:8080/CLOUDYS/VisualizzaFatture">Fatture</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/User/deleteUser.html">Disiscriviti</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/LogoutServlet">Logout</a></li>
+    </ul>
+</nav>
+<main>
+<h1>Elimina macchina virtuale</h1>
+<div>
+  <form method="POST" action="http://localhost:8080/CLOUDYS/EliminaMacchinaVirtuale">
+    <label for="vm">Codice Macchina virtuale</label>
+    <input type="text" id="vm" name="vm" placeholder="Inserisci il codice della macchina virtuale da eliminare...">
+    
+    <input type="submit" value="Elimina">
+ </form>
+</div>
+</main>
+<aside>
+<ul>
+	<li><a href="http://localhost:8080/CLOUDYS/NuovaMacchinaVirtuale">Nuova Macchina Virtuale</a></li>
+</ul>
+</aside>
