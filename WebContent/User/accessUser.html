@@ -1,0 +1,36 @@
+<script type="text/javascript">
+function validateForm() {
+    var email = document.forms["Form"]["email"].value;
+    var pw = document.forms["Form"]["password"].value;
+    var ret = true;
+    
+    if (email == null || email == "") {
+        alert("Il campo e-mail deve essere compilato.");
+        ret = false;
+    }
+    if (pw == null || pw == "") {
+        alert("Il campo password deve essere compilato.");
+        ret = false;
+    }
+    return ret;
+}
+</script>
+<nav>
+    <ul>
+        <li><a href="http://localhost:8080/CLOUDYS/index.html">Home</a></li>
+    </ul>
+</nav>
+<main>
+<h1>Accedi come utente</h1>
+<div>
+  <form name="Form" onsubmit="return validateForm()" method="POST" action="http://localhost:8080/CLOUDYS/AccessUser">
+    <label for="email">E-mail</label>
+    <input type="text" id="email" name="email" data-alert="Il tuo indirizzo e-mail" placeholder="Il tuo indirizzo e-mail...">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" data-alert="La tua password" placeholder="La tua password...">
+  
+    <input type="submit" value="Accedi">
+ </form>
+</div>
+</main>

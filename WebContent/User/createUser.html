@@ -1,0 +1,71 @@
+<script type="text/javascript">
+function validateForm() {
+	var cf = document.forms["Form"]["cf"].value;
+	var nome = document.forms["Form"]["nome"].value;
+	var cognome = document.forms["Form"]["cognome"].value;
+	var citta = document.forms["Form"]["città"].value;
+	
+	var email = document.forms["Form"]["email"].value;
+    var pw = document.forms["Form"]["password"].value;
+    var ret = true;
+
+    if (cf == null || cf == "") {
+        alert("Il campo codice fiscale deve essere compilato.");
+        ret = false;
+    }
+    if (nome == null || nome == "") {
+        alert("Il campo nome deve essere compilato.");
+        ret = false;
+    }
+    if (cognome == null || cognome == "") {
+        alert("Il campo cognome deve essere compilato.");
+        ret = false;
+    }
+    if (citta == null || citta == "") {
+        alert("Il campo data di nascita deve essere compilato.");
+        ret = false;
+    }
+    if (email == null || email == "") {
+        alert("Il campo e-mail deve essere compilato.");
+        ret = false;
+    }
+    if (pw == null || pw == "") {
+        alert("Il campo password deve essere compilato.");
+        ret = false;
+    }
+    return ret;
+}
+</script>
+<nav>
+    <ul>
+        <li><a href="http://localhost:8080/CLOUDYS/index.html">Home</a></li>
+    </ul>
+</nav>
+<main>
+<h1>Registrazone nuovo utente</h1>
+<hr />
+<div>
+  <form name="Form" method="POST" onsubmit="return validateForm()" action="http://localhost:8080/CLOUDYS/CreateUser">
+  
+    <label for="cf">Codice fiscale</label>
+    <input type="text" id="cf" name="cf" placeholder="Inserisci il codice fiscale...">
+    
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" placeholder="Inserisci il nome...">
+    
+    <label for="cognome">Cognome</label>
+    <input type="text" id="cognome" name="cognome" placeholder="Inserisci il cognome...">
+    
+    <label for="città">Città</label>
+    <input type="text" id="città" name="città" placeholder="Inserisci la tua città...">
+    
+    <label for="email">E-mail</label>
+    <input type="text" id="email" name="email" placeholder="Il tuo indirizzo e-mail...">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="La tua password...">
+  
+    <input type="submit" value="Registrati">
+ </form>
+</div>
+</main>

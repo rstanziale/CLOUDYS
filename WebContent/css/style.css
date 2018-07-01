@@ -1,0 +1,152 @@
+body {
+    border: none;
+    background: #d9d9d9;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+header {
+    border: none;
+    margin-bottom: 30px;
+    padding: 1%;
+}
+
+nav {
+    border: none;
+    border-radius: 10px;
+    background-color: #a6a6a6;
+    margin: 1%;
+    padding: 1%;
+}
+
+main {
+    float: left;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 1% 1%;
+    padding: 1%;
+    width: 67%;
+}
+
+aside {
+    float: right;
+    border: none;
+    border-radius: 10px;
+    background-color: #a6a6a6;
+    margin: 0 1% 1% 1%;
+    padding: 1%;
+    width: 26%;
+    overflow: hidden;
+}
+
+footer {
+    border: none;
+    border-radius: 10px;
+    background-color: #a6a6a6;
+    clear: both;
+    text-align: center;
+    margin: 1%;
+    padding: 1%;
+}
+
+nav ul, aside ul { 
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+}
+
+nav li a, aside li a {
+	color: white;
+    border-radius: 10px;
+    padding: 0.5%;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav li a:hover, aside li a:hover {
+    background-color: #1a8cff;
+    color: white;
+}
+
+aside li a {
+    padding: 0.5% 2%;
+}
+
+#home {
+    width:100px;
+    height:100px border:1px solid;
+    vertical-align:middle;
+    float:left;
+}
+
+h1 {
+   color:#1a8cff;
+}
+
+/*
+ * Form per gli accessi
+ */
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #1a8cff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #0066cc;
+}
+
+div {
+	width: 50%;
+}
+
+/*Per le tabelle*/
+table.prova {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+th {
+    background-color: #1a8cff;
+    color: white;
+}
