@@ -1,0 +1,32 @@
+<script type="text/javascript">
+function validateForm() {
+    var pw = document.forms["Form"]["password"].value;
+    var ret = true;
+
+    if (pw == null || pw == "") {
+        alert("Il campo password deve essere compilato.");
+        ret = false;
+    }
+    return ret;
+}
+</script>
+<nav>
+    <ul>
+        <li><a href="http://localhost:8080/CLOUDYS/User/index.html">Home</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/GestionesMacchineVirtuali">Gestione Macchine Virtuali</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/User/deleteUser.html">Disiscriviti</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/Logout">Logout</a></li>
+    </ul>
+</nav>
+<main>
+<h1>Disiscrizione</h1>
+<p>Sei sicuro di volerti cancellare dal sistema?</p>
+<div>
+  <form name="Form" onsubmit="return validateForm()" method="POST" action="http://localhost:8080/CLOUDYS/DeleteUser">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" data-alert="La tua password" placeholder="La tua password...">
+  
+    <input type="submit" value="Cancellati">
+ </form>
+</div>
+</main>

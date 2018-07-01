@@ -3,7 +3,7 @@
 <nav>
     <ul>
         <li><a href="http://localhost:8080/CLOUDYS/index.html">Home</a></li>
-		<li><a href="http://localhost:8080/CLOUDYS/LogoutServlet">Logout</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/Logout">Logout</a></li>
     </ul>
 </nav>
 <main>

@@ -10,22 +10,12 @@
     </ul>
 </nav>
 <main>
-	<h1>LE MIE FATTURE</h1>
-	<table class = "prova">
-		<tr>
-			<th>CODICE</th>
-		    <th>DATA EMISSIONE</th>
-		    <th>IMPORTO</th>
-		    <th>MACCHINE VIRTUALI</th>
-
-		</tr>
-		<c:forEach items="${fatture}" var="fattura">
-		<tr>
-			<td><c:out value="${fattura.codice}" /></td>
-			<td><c:out value="${fattura.dataemissione}" /></td>
-			<td><c:out value="${fattura.importo}" /></td>
-			<td><c:out value="${macchinevirtualicreate}" /></td>
-		</tr>
-	 	</c:forEach>	
-	</table>
+	<h1>SCEGLI LE APPLICAZIONI DA INSTALLARE</h1>
+	
+	<form action="http://localhost:8080/CLOUDYS/InstallaApp" method="post">
+		<c:forEach items="${apps}" var="app">
+  			<input type="checkbox" name="app" value="${app.nome}"> <c:out value="${app.nome}" /><br>
+  		</c:forEach>
+  		<input type="submit" value="Installa">
+	</form>
 </main>

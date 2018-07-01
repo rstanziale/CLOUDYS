@@ -2,7 +2,6 @@ package com.bdii.servlet.user;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -16,16 +15,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.bdii.data.DAO;
 
 /**
- * Servlet implementation class DeleteUser
+ * Servlet implementation class EliminaMacchinaVirtuale
  */
-@WebServlet("/DeleteUser")
-public class DeleteUser extends HttpServlet {
+@WebServlet("/EliminaMacchinaVirtuale")
+public class EliminaMacchinaVirtuale extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteUser() {
+    public EliminaMacchinaVirtuale() {
         super();
     }
 
@@ -35,18 +34,12 @@ public class DeleteUser extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8");
 		
-        String password = request.getParameter("password");
-		
 		Cookie ck[] = request.getCookies();
 		String role = "";
-		String cf = "";
 
 		for(Cookie temp : ck) {
 			if(temp.getName().equals("role")) {
 				role = temp.getValue();
-			}
-			if(temp.getName().equals("cf")) {
-				cf = temp.getValue();
 			}
 		}
 		
@@ -54,46 +47,31 @@ public class DeleteUser extends HttpServlet {
 			if(role.equals("U")) {
 				try {
 					DAO dao = new DAO();
+					PreparedStatement pstmt = dao.getConnection().prepareStatement("BEGIN"
+							+ " DISTRUGGI_VM(" + request.getParameter("vm") + ");"
+							+ " END;");
 					
-					PreparedStatement pstmt = dao.getConnection().prepareStatement("SELECT PW FROM USERS WHERE"
-							+ " DEREF(DATI_UTENTE).CF = \'" + cf + "\'");
+					pstmt.executeUpdate();
 					
-					ResultSet result = pstmt.executeQuery();
-					result.next();
-					
-					if (result.getString("PW").equals(password)){
-						
-						pstmt = dao.getConnection().prepareStatement("DELETE FROM USERS WHERE"
-								+ " DEREF(DATI_UTENTE).CF = \'" + cf + "\'");
-								
-						pstmt.executeUpdate();
-						
-						pstmt = dao.getConnection().prepareStatement("DELETE FROM CLIENTE WHERE"
-								+ " CF = \'" + cf + "\'");
-						
-						pstmt.executeUpdate();
-						
-					}
-					else {
-			        	request.setAttribute("error", "Errore nella fase di cancellazione dell'account.");
-			        	request.setAttribute("role", "U");
-			            RequestDispatcher rd = request.getRequestDispatcher("error.jsp");  
-			            rd.include(request, response);
-					}
-					
-					result.close();
 					pstmt.close();
 					dao.closeConnection();
 					
-					request.getRequestDispatcher("/index.html").forward(request, response);
+					request.getRequestDispatcher("/GestioneMacchineVirtuali").forward(request, response);
+					
 				} catch (ClassNotFoundException | SQLException e) {
 					e.printStackTrace();
 
         			request.setAttribute("error", e.getMessage());
-        			request.setAttribute("role", "A");
+        			request.setAttribute("role", "U");
         			RequestDispatcher rd = request.getRequestDispatcher("./error.jsp");  
         			rd.include(request, response);
 				}
+			}
+			else {
+	        	request.setAttribute("error", "Errore nella fase di caricamento dei possedimenti.");
+	        	request.setAttribute("role", "U");
+	            RequestDispatcher rd = request.getRequestDispatcher("error.jsp");  
+	            rd.include(request, response);
 			}	
 		}
 	}

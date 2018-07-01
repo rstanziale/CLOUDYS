@@ -2,8 +2,10 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" import="java.util.List" %> 
 <nav>
     <ul>
-        <li><a href="http://localhost:8080/CLOUDYS/User/index.html">Home</a></li>
-         <li><a href="http://localhost:8080/CLOUDYS/VisualizzaFatture">Fatture</a></li>
+        <li><a href="http://localhost:8080/CLOUDYS/User/index.jsp">Home</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/GestioneMacchineVirtuali">Gestione Macchine Virtuali</a></li>
+        <li><a href="http://localhost:8080/CLOUDYS/VisualizzaFatture">Fatture</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/User/deleteUser.html">Disiscriviti</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/Logout">Logout</a></li>
     </ul>
 </nav>
