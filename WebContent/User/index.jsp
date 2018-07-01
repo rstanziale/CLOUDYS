@@ -3,6 +3,7 @@
 <nav>
     <ul>
         <li><a href="http://localhost:8080/CLOUDYS/User/index.html">Home</a></li>
+         <li><a href="http://localhost:8080/CLOUDYS/VisualizzaFatture">Fatture</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/Logout">Logout</a></li>
     </ul>
 </nav>
