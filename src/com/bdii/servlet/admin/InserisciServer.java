@@ -77,7 +77,7 @@ public class InserisciServer extends HttpServlet {
 							+ "((select ref(r) from ram r where capacita = "+ ram +")), "
 							+ "((select ref(p) from processore p where modello=\'"+ modello +"\' and core = "+ core +")), "
 							+ "null, "
-							+ "null, "
+							+ "null "
 							+ ")");
 					 pstmt.executeUpdate();
 					
@@ -101,7 +101,8 @@ public class InserisciServer extends HttpServlet {
 					
 					pstmt = dao.getConnection().prepareStatement("update server "
 							+ "set hdd = cast(multiset(select ref(h) from hdd h where "+ stringaQuery +" )as hddnt) "
-							+ "where id="+idserver+")");
+							+ "where id="+idserver);
+					pstmt.executeUpdate();
 		
 					result.close();
 					pstmt.close();
