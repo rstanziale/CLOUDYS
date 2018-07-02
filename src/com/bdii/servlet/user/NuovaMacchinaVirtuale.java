@@ -82,7 +82,7 @@ public class NuovaMacchinaVirtuale extends HttpServlet {
 				}
 			}
 			else {
-	        	request.setAttribute("error", "Errore nella fase di caricamento dei possedimenti.");
+	        	request.setAttribute("error", "Errore nella fase di creazione della macchina virtuale.");
 	        	request.setAttribute("role", "U");
 	            RequestDispatcher rd = request.getRequestDispatcher("error.jsp");  
 	            rd.include(request, response);

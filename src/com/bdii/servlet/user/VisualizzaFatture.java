@@ -103,7 +103,7 @@ public class VisualizzaFatture extends HttpServlet {
 	        		}
 				}
 				else {
-		        	request.setAttribute("error", "Errore nella fase di visualizzazione del tariffario.");
+		        	request.setAttribute("error", "Errore nella fase di visualizzazione delle fatture.");
 		        	request.setAttribute("role", "A");
 		            RequestDispatcher rd = request.getRequestDispatcher("error.jsp");  
 		            rd.include(request, response);
