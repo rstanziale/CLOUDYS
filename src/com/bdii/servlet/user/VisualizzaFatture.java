@@ -73,7 +73,8 @@ public class VisualizzaFatture extends HttpServlet {
 						
 						ArrayList<String> macchinevirtualicreate = new ArrayList<String>();
 						PreparedStatement pstmt2 = dao.getConnection().prepareStatement("select deref(NT.vm).id as id "
-								+ "from table ( select vm from cliente where cf = \'"+ cf +"\')NT");
+								+ "from table ( select vm from cliente where cf = \'"+ cf +"\')NT "
+								+ "where deref(NT.vm).id != 0");
 						
 						ResultSet result2= pstmt2.executeQuery();
 						

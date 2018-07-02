@@ -3,7 +3,7 @@
 <nav>
     <ul>
         <li><a href="http://localhost:8080/CLOUDYS/User/index.jsp">Home</a></li>
-		<li><a href="http://localhost:8080/CLOUDYS/GestioneMacchineVirtuali">Gestione Macchine Virtuali</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/GestioneMacchineVirtuali">Macchine Virtuali</a></li>
         <li><a href="http://localhost:8080/CLOUDYS/VisualizzaFatture">Fatture</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/User/deleteUser.html">Disiscriviti</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/Logout">Logout</a></li>
@@ -14,10 +14,10 @@
 <p>Macchine Virtuali attive</p>
 	<table class = "prova">
 		<tr>
-			<th>CODICE</th>
+			<th>ID</th>
 		    <th>HDD</th>
 		    <th>RAM</th>
-		    <th>PROCESSORE</th>
+		    <th>CORE</th>
 		   	<th>DATA CREAZIONE</th>
 		   	<th>COSTO</th>
 		   	<th>OS</th>
@@ -26,11 +26,11 @@
 		<c:forEach items="${macchine}" var="vm">
 		<tr>
 			<td><c:out value="${vm.id}" /></td>
-			<td><c:out value="${vm.hdd}" /></td>
-			<td><c:out value="${vm.ram}" /></td>
+			<td><c:out value="${vm.hdd}" />GB</td>
+			<td><c:out value="${vm.ram}" />GB</td>
 			<td><c:out value="${vm.processore}" /></td>
 			<td><c:out value="${vm.datacreazione}" /></td>
-			<td><c:out value="${vm.costo}" /></td>
+			<td><c:out value="${vm.costo}" />€/giorno</td>
 			<td><c:out value="${vm.getOsName()}" /></td>
 			<td><c:out value="${vm.getApp()}" /></td>
 		</tr>

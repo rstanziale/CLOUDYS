@@ -12,6 +12,7 @@
 </nav>
 <main>
 <h1>Fatture</h1>
+<p>Seleziona cliente:</p>
 	<form name="Form" id="cliform" method="POST" action="http://localhost:8080/CLOUDYS/FattureCliente">
 		<select name="clienti" form="cliform">
 	    <c:forEach items="${clienti}" var="c">
