@@ -84,19 +84,20 @@ public class InserisciServer extends HttpServlet {
 					
 					
 					int i = 1;
-					for(String a : hdd) 
-					{
-						if(i == 1)
+					for(String a : hdd) {
+						if(hdd.length == 1)
+							stringaQuery += "h.capacita = "+ a + " ";
+						else if(i == 1)
 							stringaQuery += "h.capacita >= "+ a + " " + " AND ";
 						else if(i == hdd.length) 
 							stringaQuery += "h.capacita <= "+ a + " ";
-
 						i++;
 					}
 					
 					pstmt = dao.getConnection().prepareStatement("update server "
-							+ "set hdd = cast(multiset(select ref(h) from hdd h where "+ stringaQuery +" )as hddnt) "
-							+ "where id="+idserver);
+				              + "set hdd = cast(multiset(select ref(h) from hdd h where "+ stringaQuery +" )as hddnt) "
+				              + "where id="+idserver);
+					
 					pstmt.executeUpdate();
 		
 					result.close();
