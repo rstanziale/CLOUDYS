@@ -12,6 +12,6 @@
 <main>
 <h1>Benvenuto <c:out value="${utente}" /></h1>
 <hr />
-<p>Da qui potrai gestire i tuoi possedimenti navigando attraverso il menu.</p>
+<p>Da qui potrai gestire le tue macchine virtuali navigando attraverso il menu e visualizzare le tue fatture.</p>
 <p>Il tuo bonus ammonta a: <c:out value="${bonus}" />€.</p>
 </main>
