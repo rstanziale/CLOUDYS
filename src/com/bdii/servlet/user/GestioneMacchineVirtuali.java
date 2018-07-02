@@ -116,7 +116,7 @@ public class GestioneMacchineVirtuali extends HttpServlet {
 				}
 			}
 			else {
-	        	request.setAttribute("error", "Errore nella fase di caricamento dei possedimenti.");
+	        	request.setAttribute("error", "Errore nella fase di caricamento delle macchine virtuali.");
 	        	request.setAttribute("role", "U");
 	            RequestDispatcher rd = request.getRequestDispatcher("error.jsp");  
 	            rd.include(request, response);
