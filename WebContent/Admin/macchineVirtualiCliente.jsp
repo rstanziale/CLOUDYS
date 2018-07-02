@@ -10,28 +10,25 @@
     </ul>
 </nav>
 <main>
-<h1>Clienti</h1>
+<h1>Macchine Virtuali  del cliente <c:out value="${cf}" /></h1>
 	<table class = "prova">
 		<tr>
-			<th>CF</th>
-		    <th>NOME</th>
-		    <th>COGNOME</th>
-		    <th>EMAIL</th>
-		   	<th>BONUS</th>
+			<th>ID</th>
+		    <th>HDD</th>
+		    <th>RAM</th>
+		    <th>PROCESSORE</th>
+		    <th>DATAEMISSIONE</th>
+		    <th>COSTO</th>
 		</tr>
-		<c:forEach items="${clienti}" var="c">
+		<c:forEach items="${macchine}" var="m">
 		<tr>
-			<td><c:out value="${c.getCf()}" /></td>
-			<td><c:out value="${c.getNome()}" /></td>
-			<td><c:out value="${c.getCognome()}" /></td>
-			<td><c:out value="${c.getEmail()}" /></td>
-			<td><c:out value="${c.getBonus()}" /></td>
+			<td><c:out value="${m.getId()}" /></td>
+			<td><c:out value="${m.getHdd()}" /></td>
+			<td><c:out value="${m.getRam()}" /></td>
+			<td><c:out value="${m.getProcessore()}" /></td>
+			<td><c:out value="${m.getDatacreazione()}" /></td>
+			<td><c:out value="${m.getCosto()}" />€/giorno</td>
 		</tr>
 	 	</c:forEach>	
 	</table>
 </main>
-<aside>
-<ul>
-	<li><a href="http://localhost:8080/CLOUDYS/ClientiPresentatori">Clienti con presentazioni</a></li>
-</ul>
-</aside>
