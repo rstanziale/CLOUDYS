@@ -10,9 +10,9 @@ public class VM {
 	private String processore;
 	private String datacreazione;
 	private String costo;
+	private String proprietario;
 	private String os;
 	private ArrayList<String> app;
-	
 	
 	public VM(String id, String hdd, String ram, String processore, String datacreazione, String costo) {
 		super();
@@ -26,103 +26,77 @@ public class VM {
 		this.app = new ArrayList<String>();
 	}
 
-
-
 	public String getId() {
 		return id;
 	}
-
-
 
 	public String getOsName() {
 		return os;
 	}
 
-
-
 	public void setOs(String os) {
 		this.os = os;
 	}
-
-
 
 	public ArrayList<String> getApp() {
 		return app;
 	}
 
-
-
 	public void addApp(String app) {
 		this.app.add(app);
 	}
-
-
 
 	public void setId(String id) {
 		this.id = id;
 	}
 
-
-
 	public String getHdd() {
 		return hdd;
 	}
-
-
 
 	public void setHdd(String hdd) {
 		this.hdd = hdd;
 	}
 
-
-
 	public String getRam() {
 		return ram;
 	}
-
-
 
 	public void setRam(String ram) {
 		this.ram = ram;
 	}
 
-
-
 	public String getProcessore() {
 		return processore;
 	}
-
-
 
 	public void setProcessore(String processore) {
 		this.processore = processore;
 	}
 
-
-
 	public String getDatacreazione() {
 		return datacreazione;
 	}
-
-
 
 	public void setDatacreazione(String datacreazione) {
 		this.datacreazione = datacreazione;
 	}
 
-
-
 	public String getCosto() {
 		return costo;
 	}
-
-
 
 	public void setCosto(String costo) {
 		this.costo = costo;
 	}
 
+	public String getProprietario() {
+		return proprietario;
+	}
 
+	public void setProprietario(String proprietario) {
+		this.proprietario = proprietario;
+	}
 
 	@Override
 	public int hashCode() {
@@ -136,8 +110,6 @@ public class VM {
 		result = prime * result + ((ram == null) ? 0 : ram.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -180,8 +152,6 @@ public class VM {
 			return false;
 		return true;
 	}
-
-
 
 	@Override
 	public String toString() {
