@@ -6,6 +6,7 @@
         <li><a href="http://localhost:8080/CLOUDYS/Clienti">Clienti</a></li>
         <li><a href="http://localhost:8080/CLOUDYS/Fatture">Fatture</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/MacchineVirtuali">Macchine Virtuali</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/GestioneServer">Server</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/Logout">Logout</a></li>
     </ul>
 </nav>

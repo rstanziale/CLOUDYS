@@ -6,11 +6,13 @@
 		<li><a href="http://localhost:8080/CLOUDYS/Clienti">Clienti</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/Fatture">Fatture</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/MacchineVirtuali">Macchine Virtuali</a></li>
+		<li><a href="http://localhost:8080/CLOUDYS/GestioneServer">Server</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/Logout">Logout</a></li>
     </ul>
 </nav>
 <main>
 <h1>Fatture</h1>
+<p>Seleziona cliente:</p>
 	<form name="Form" id="cliform" method="POST" action="http://localhost:8080/CLOUDYS/FattureCliente">
 		<select name="clienti" form="cliform">
 	    <c:forEach items="${clienti}" var="c">
