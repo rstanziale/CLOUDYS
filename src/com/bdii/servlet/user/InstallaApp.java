@@ -79,7 +79,7 @@ public class InstallaApp extends HttpServlet {
 				}
 			}
 			else {
-	        	request.setAttribute("error", "Errore nella fase di caricamento dei possedimenti.");
+	        	request.setAttribute("error", "Errore nella fase di inserimento delle app nella macchina virtuale.");
 	        	request.setAttribute("role", "U");
 	            RequestDispatcher rd = request.getRequestDispatcher("error.jsp");  
 	            rd.include(request, response);

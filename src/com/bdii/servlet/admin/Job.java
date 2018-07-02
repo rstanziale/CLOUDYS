@@ -32,11 +32,11 @@ public class Job extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-response.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		
 		Cookie ck[] = request.getCookies();
 		String role = "";
-		
+
 
 		for(Cookie temp : ck) {
 			if(temp.getName().equals("role")) {
@@ -59,6 +59,7 @@ response.setCharacterEncoding("UTF-8");
 								+ "schedule_name=>'MINUTO',enabled=>TRUE); END; ");
 						 pstmt.executeUpdate();
 						 stateJob="Attivo";
+
 					}
 					else
 					{
