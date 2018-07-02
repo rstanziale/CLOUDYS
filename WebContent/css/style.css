@@ -7,9 +7,15 @@ body {
 }
 
 header {
-    border: none;
+	color: white;
+	font-weight: bold;
+	font-style: bold;
+	font-size: 30px;
     margin-bottom: 30px;
     padding: 1%;
+    background-image: url("../images/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
@@ -86,6 +92,10 @@ aside li a {
 }
 
 h1 {
+   color:#1a8cff;
+}
+
+h2 {
    color:#1a8cff;
 }
 
