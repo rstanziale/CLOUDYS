@@ -36,6 +36,7 @@ response.setCharacterEncoding("UTF-8");
 		
 		Cookie ck[] = request.getCookies();
 		String role = "";
+		
 
 		for(Cookie temp : ck) {
 			if(temp.getName().equals("role")) {
@@ -47,7 +48,7 @@ response.setCharacterEncoding("UTF-8");
 			if(role.equals("A")) {
 				try {
 					DAO dao = new DAO();
-					PreparedStatement pstmt;
+					PreparedStatement pstmt = null;
 					String cod = request.getParameter("Cod");
 					String stateJob = "";
 					
@@ -58,7 +59,6 @@ response.setCharacterEncoding("UTF-8");
 								+ "schedule_name=>'MINUTO',enabled=>TRUE); END; ");
 						 pstmt.executeUpdate();
 						 stateJob="Attivo";
-
 					}
 					else
 					{
@@ -69,6 +69,8 @@ response.setCharacterEncoding("UTF-8");
 						 pstmt.executeUpdate();
 							stateJob="Non Attivo";
 					}
+				
+					
 					
 					pstmt.close();
 					dao.closeConnection();
