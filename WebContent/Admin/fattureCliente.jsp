@@ -21,15 +21,7 @@
 		<tr>
 			<td><c:out value="${f.getCodice()}" /></td>
 			<td><c:out value="${f.getDataemissione()}" /></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
 			<td><c:out value="${f.getImporto()}" /></td>
-=======
-			<td><c:out value="${f.getImporto()}" />€</td>
->>>>>>> branch 'master' of https://github.com/rstanziale/CLOUDYS
-=======
-			<td><c:out value="${f.getImporto()}" />€</td>
->>>>>>> branch 'master' of https://github.com/rstanziale/CLOUDYS
 		</tr>
 	 	</c:forEach>	
 	</table>

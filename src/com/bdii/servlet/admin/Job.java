@@ -36,10 +36,12 @@ public class Job extends HttpServlet {
 		
 		Cookie ck[] = request.getCookies();
 		String role = "";
+		String state = "";
 
 
 		for(Cookie temp : ck) {
-			if(temp.getName().equals("role")) {
+			if(temp.getName().equals("role")) 
+			{
 				role = temp.getValue();
 			}
 		}
@@ -50,7 +52,6 @@ public class Job extends HttpServlet {
 					DAO dao = new DAO();
 					PreparedStatement pstmt = null;
 					String cod = request.getParameter("Cod");
-					String stateJob = "";
 					
 					if(cod.equals("0"))
 					{
@@ -58,24 +59,38 @@ public class Job extends HttpServlet {
 								+ "DBMS_SCHEDULER.CREATE_JOB (job_name=>'AGGIORNA_FATTURE',program_name=>'SCHEDULER_FATTURA',"
 								+ "schedule_name=>'MINUTO',enabled=>TRUE); END; ");
 						 pstmt.executeUpdate();
-						 stateJob="Attivo";
+						 
+						 Cookie statejob = new Cookie("stateJob", "Attivo");
+						 statejob.setMaxAge(60*60);
+				         response.addCookie(statejob);
+						 pstmt.close();
+
 
 					}
-					else
+					else if(cod.equals("1"))
 					{
 						pstmt = dao.getConnection().prepareStatement("BEGIN "
 								+ "DBMS_SCHEDULER.DROP_JOB('AGGIORNA_FATTURE');"
 								+ " END; ");
 						
 						 pstmt.executeUpdate();
-							stateJob="Non Attivo";
+						 Cookie statejob = new Cookie("stateJob", "Inattivo");
+						 statejob.setMaxAge(60*60);
+				         response.addCookie(statejob);
+				         pstmt.close();
+
 					}
-				
 					
-					
-					pstmt.close();
 					dao.closeConnection();
-					request.setAttribute("stateJob", stateJob);
+					
+					for(Cookie temp : ck) {
+						if(temp.getName().equals("stateJob"))
+						{
+							state = temp.getValue();	
+						}
+					}
+					
+					request.setAttribute("stateJob", state);
 					request.getRequestDispatcher("/Admin/index.jsp").forward(request, response);
 					
 				} catch (ClassNotFoundException | SQLException e) {

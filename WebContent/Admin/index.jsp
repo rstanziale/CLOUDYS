@@ -5,14 +5,7 @@
         <li><a href="http://localhost:8080/CLOUDYS/Admin/index.jsp">Home</a></li>
         <li><a href="http://localhost:8080/CLOUDYS/Clienti">Clienti</a></li>
         <li><a href="http://localhost:8080/CLOUDYS/Fatture">Fatture</a></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 		<li><a href="http://localhost:8080/CLOUDYS/MacchineVirtuali">Macchine Virtuali</a></li>
->>>>>>> branch 'master' of https://github.com/rstanziale/CLOUDYS
-=======
-		<li><a href="http://localhost:8080/CLOUDYS/MacchineVirtuali">Macchine Virtuali</a></li>
->>>>>>> branch 'master' of https://github.com/rstanziale/CLOUDYS
 		<li><a href="http://localhost:8080/CLOUDYS/Logout">Logout</a></li>
     </ul>
 </nav>
@@ -34,6 +27,10 @@
 <hr/>
 <ul>
 	<li><a href="http://localhost:8080/CLOUDYS/Job?Cod=1">Ferma Scheduler Fatture</a></li>
+</ul>
+<hr/>
+<ul>
+	<li><a href="http://localhost:8080/CLOUDYS/Job?Cod=2">Aggiorna Stato Scheduler</a></li>
 </ul>
 </aside>
 </main>
