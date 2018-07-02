@@ -25,7 +25,7 @@
 			<td><c:out value="${c.getNome()}" /></td>
 			<td><c:out value="${c.getCognome()}" /></td>
 			<td><c:out value="${c.getEmail()}" /></td>
-			<td><c:out value="${c.getBonus()}" /></td>
+			<td><c:out value="${c.getBonus()}" />€</td>
 		</tr>
 	 	</c:forEach>	
 	</table>
