@@ -65,6 +65,17 @@ public class CreateUser extends HttpServlet {
 					+ " where email = \'" + email + "\'");
 			
 			pstmt.executeUpdate();
+			
+			if(!request.getParameter("amico").equals("")) {
+				PreparedStatement pstmt2 = dao.getConnection().prepareStatement("BEGIN "
+						+ "AGGIORNA_BONUS(\'" + email + "\', \'" + request.getParameter("amico") + "\'); "
+						+ "END;");
+					
+				pstmt2.executeUpdate();
+				
+				pstmt2.close();
+			}
+			
 			pstmt.close();
 			dao.closeConnection();
 			

@@ -38,7 +38,8 @@ public class AccessUser extends HttpServlet {
 	          
 	        if(dao.checkLogin(email, password).equals("U")) {
 	        	PreparedStatement pstmt = dao.getConnection().prepareStatement("select deref(dati_utente).cf as cf,"
-	        			+ " deref(dati_utente).nome as nome"
+	        			+ " deref(dati_utente).nome as nome,"
+	        			+ " deref(dati_utente).bonus as bonus"
 	        			+ " from users"
 	        			+ " where email = \'" + email + "\'");
 	        	
@@ -46,6 +47,7 @@ public class AccessUser extends HttpServlet {
 	        	rs.next();
 	        	String cf = rs.getString("cf");
 	        	String nomeCliente = rs.getString("nome");
+	        	String bonusCliente = rs.getString("bonus");
 	        	
 	        	Cookie ck_cliente = new Cookie("cf", cf);
 	        	ck_cliente.setMaxAge(60*60);
@@ -59,6 +61,7 @@ public class AccessUser extends HttpServlet {
 	            pstmt.close();
 	            
 	            request.setAttribute("utente", nomeCliente);
+	            request.setAttribute("bonus", bonusCliente);
 	            RequestDispatcher rd = request.getRequestDispatcher("./User/index.jsp");  
 	            rd.forward(request, response);  
 	        }  

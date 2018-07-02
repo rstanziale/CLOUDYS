@@ -5,9 +5,7 @@ public class Fattura
 	private String codice;
 	private String dataemissione;
 	private String importo;
-	
-	
-	
+	private String proprietario;
 	
 	public Fattura(String codice, String dataemissione, String importo) {
 		super();
@@ -16,50 +14,37 @@ public class Fattura
 		this.importo = importo;
 	}
 
-
-
-
 	public String getCodice() {
 		return codice;
 	}
-
-
-
 
 	public void setCodice(String codice) {
 		this.codice = codice;
 	}
 
-
-
-
 	public String getDataemissione() {
 		return dataemissione;
 	}
-
-
-
 
 	public void setDataemissione(String dataemissione) {
 		this.dataemissione = dataemissione;
 	}
 
-
-
-
 	public String getImporto() {
 		return importo;
 	}
-
-
-
 
 	public void setImporto(String importo) {
 		this.importo = importo;
 	}
 
+	public String getProprietario() {
+		return proprietario;
+	}
 
-
+	public void setProprietario(String proprietario) {
+		this.proprietario = proprietario;
+	}
 
 	@Override
 	public int hashCode() {
@@ -70,9 +55,6 @@ public class Fattura
 		result = prime * result + ((importo == null) ? 0 : importo.hashCode());
 		return result;
 	}
-
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -101,12 +83,8 @@ public class Fattura
 		return true;
 	}
 
-
-
-
 	@Override
 	public String toString() {
 		return "Fattura [codice=" + codice + ", dataemissione=" + dataemissione + ", importo=" + importo + "]";
 	}
-
 }
