@@ -18,7 +18,6 @@ import com.bdii.data.DAO;
 import com.bdii.model.Hdd;
 import com.bdii.model.Processore;
 import com.bdii.model.Ram;
-import com.bdii.model.VM;
 
 /**
  * Servlet implementation class RestituisciHwDisponibile

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,9 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bdii.data.DAO;
-import com.bdii.model.Hdd;
-import com.bdii.model.Processore;
-import com.bdii.model.Ram;
 
 /**
  * Servlet implementation class InserisciServer
@@ -40,7 +36,6 @@ public class InserisciServer extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		
-		String[] s = request.getParameterValues("processori");
 		String str = "";
 		String stringaQuery = "";
 		
