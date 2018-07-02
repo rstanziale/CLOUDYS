@@ -2,7 +2,7 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" import="java.util.List" %> 
 <nav>
     <ul>
-        <li><a href="http://localhost:8080/CLOUDYS/Admin/index.html">Home</a></li>
+        <li><a href="http://localhost:8080/CLOUDYS/Admin/index.jsp">Home</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/Clienti">Clienti</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/Fatture">Fatture</a></li>
 		<li><a href="http://localhost:8080/CLOUDYS/Logout">Logout</a></li>
