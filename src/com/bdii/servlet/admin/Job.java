@@ -32,7 +32,7 @@ public class Job extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-response.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		
 		Cookie ck[] = request.getCookies();
 		String role = "";
@@ -49,14 +49,16 @@ response.setCharacterEncoding("UTF-8");
 					DAO dao = new DAO();
 					PreparedStatement pstmt;
 					String cod = request.getParameter("Cod");
+					String stateJob = "";
 					
 					if(cod.equals("0"))
 					{
 						pstmt = dao.getConnection().prepareStatement("BEGIN "
 								+ "DBMS_SCHEDULER.CREATE_JOB (job_name=>'AGGIORNA_FATTURE',program_name=>'SCHEDULER_FATTURA',"
 								+ "schedule_name=>'MINUTO',enabled=>TRUE); END; ");
-						
 						 pstmt.executeUpdate();
+						 stateJob="Attivo";
+
 					}
 					else
 					{
@@ -65,12 +67,13 @@ response.setCharacterEncoding("UTF-8");
 								+ " END; ");
 						
 						 pstmt.executeUpdate();
+							stateJob="Non Attivo";
 					}
 					
 					pstmt.close();
 					dao.closeConnection();
-					
-					request.getRequestDispatcher("/Admin/index.html").forward(request, response);
+					request.setAttribute("stateJob", stateJob);
+					request.getRequestDispatcher("/Admin/index.jsp").forward(request, response);
 					
 				} catch (ClassNotFoundException | SQLException e) {
 					e.printStackTrace();

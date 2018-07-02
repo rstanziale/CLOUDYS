@@ -39,7 +39,7 @@ public class AccessAdmin extends HttpServlet {
 	        	ck.setMaxAge(60*60);
 	            response.addCookie(ck);
 	            
-	            RequestDispatcher rd = request.getRequestDispatcher("./Admin/index.html");  
+	            RequestDispatcher rd = request.getRequestDispatcher("./Admin/index.jsp");  
 	            rd.forward(request, response);  
 	        }  
 	        else {
