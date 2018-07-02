@@ -28,5 +28,9 @@
 <ul>
 	<li><a href="http://localhost:8080/CLOUDYS/Job?Cod=1">Ferma Scheduler Fatture</a></li>
 </ul>
+<hr/>
+<ul>
+	<li><a href="http://localhost:8080/CLOUDYS/Job?Cod=2">Aggiorna Stato Scheduler</a></li>
+</ul>
 </aside>
 </main>

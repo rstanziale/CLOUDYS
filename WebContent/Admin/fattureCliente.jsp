@@ -21,7 +21,7 @@
 		<tr>
 			<td><c:out value="${f.getCodice()}" /></td>
 			<td><c:out value="${f.getDataemissione()}" /></td>
-			<td><c:out value="${f.getImporto()}" />€</td>
+			<td><c:out value="${f.getImporto()}" /></td>
 		</tr>
 	 	</c:forEach>	
 	</table>
