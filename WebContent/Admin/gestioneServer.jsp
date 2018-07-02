@@ -11,28 +11,32 @@
     </ul>
 </nav>
 <main>
-<h1>Clienti</h1>
+<h1>Server</h1>
 	<table class = "prova">
 		<tr>
-			<th>CF</th>
-		    <th>NOME</th>
-		    <th>COGNOME</th>
-		    <th>EMAIL</th>
-		   	<th>BONUS</th>
+			<th>ID</th>
+		    <th>RAM</th>
+		    <th>PROCESSORE</th>
+		    <th>HDD (GB)</th>
+		    <th>N° VM</th>
 		</tr>
-		<c:forEach items="${clienti}" var="c">
+		<c:forEach items="${server}" var="s">
 		<tr>
-			<td><c:out value="${c.getCf()}" /></td>
-			<td><c:out value="${c.getNome()}" /></td>
-			<td><c:out value="${c.getCognome()}" /></td>
-			<td><c:out value="${c.getEmail()}" /></td>
-			<td><c:out value="${c.getBonus()}" />€</td>
+			<td><c:out value="${s.getID()}" /></td>
+			<td><c:out value="${s.getRam()}" />GB</td>
+			<td><c:out value="${s.getProcessore()}" /> Core</td>
+			<td><c:out value="${s.getHdd()}" /></td>
+			<td><c:out value="${s.getNumeroVM()}" /></td>
 		</tr>
 	 	</c:forEach>	
 	</table>
 </main>
 <aside>
 <ul>
-	<li><a href="http://localhost:8080/CLOUDYS/ClientiPresentatori">Clienti con presentazioni</a></li>
+	<li><a href="http://localhost:8080/CLOUDYS/RestituisciHwDisponibile">Crea Server</a></li>
+</ul>
+<hr/>
+<ul>
+	<li><a href="http://localhost:8080/CLOUDYS/EliminaServer">Elimina Server</a></li>
 </ul>
 </aside>

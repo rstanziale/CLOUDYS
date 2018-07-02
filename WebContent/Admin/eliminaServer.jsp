@@ -11,28 +11,20 @@
     </ul>
 </nav>
 <main>
-<h1>Clienti</h1>
-	<table class = "prova">
-		<tr>
-			<th>CF</th>
-		    <th>NOME</th>
-		    <th>COGNOME</th>
-		    <th>EMAIL</th>
-		   	<th>BONUS</th>
-		</tr>
-		<c:forEach items="${clienti}" var="c">
-		<tr>
-			<td><c:out value="${c.getCf()}" /></td>
-			<td><c:out value="${c.getNome()}" /></td>
-			<td><c:out value="${c.getCognome()}" /></td>
-			<td><c:out value="${c.getEmail()}" /></td>
-			<td><c:out value="${c.getBonus()}" />€</td>
-		</tr>
-	 	</c:forEach>	
-	</table>
+<h1>Elimina Server</h1>
+<p>Seleziona il server da eliminare:</p>
+<form name="Form" id="serform" method="POST" action="http://localhost:8080/CLOUDYS/CancellaServer">
+	<select name="server" form="serform">
+    <c:forEach items="${server}" var="s">
+		<option value="${s}"><c:out value="${s}" /></option>
+	</c:forEach>
+	</select>
+  
+    <input type="submit" value="Elimina">
+</form>
 </main>
 <aside>
 <ul>
-	<li><a href="http://localhost:8080/CLOUDYS/ClientiPresentatori">Clienti con presentazioni</a></li>
+	<li><a href="http://localhost:8080/CLOUDYS/RestituisciHwDisponibile">Crea Server</a></li>
 </ul>
 </aside>
