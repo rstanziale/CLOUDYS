@@ -1,1 +1,11 @@
 /build/
+/target/
+/.idea/
+/.settings/
+*.log
+*.bak
+*.sav
+*.class
+*.iml
+.classpath
+.project
